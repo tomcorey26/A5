@@ -9,7 +9,7 @@ class KDNode {
         std::string description;
         KDNode *left;
         KDNode *right;
-        bool color;
+        //bool color;
         // perhaps you want to include `depth` as well
 
         // this function returns the distance in miles from lat, lon
@@ -18,6 +18,7 @@ class KDNode {
 
     public:
         KDNode(double lat, double lon, const char *desc);
+        
         ~KDNode();
 
     friend class KDTree;
@@ -29,10 +30,12 @@ class KDTree {
         KDNode *root;
 
         void destroy(KDNode *p);
+        
 
     public:
         KDTree();
         ~KDTree();
+        void print();
 
         unsigned int getSize();
         void insert(double lat, double lon, const char *desc);
